@@ -24,10 +24,19 @@
     cursor:pointer;
     font-weight:600;
     box-shadow: 0 2px 0 rgba(0,0,0,0.08);
+    transition: background-color 200ms ease, color 200ms ease, filter 200ms ease;
 }
+
+/* Hover: subtle brighten for feedback */
+.filter-button:hover{
+    filter: brightness(1.06);
+}
+
+/* Active (selected): lighter background and readable text */
 .filter-button.active{
-    background: var(--button-active-bg);
-    color: var(--button-active-text);
+    background: var(--button-active-bg) !important;
+    color: var(--button-active-text) !important;
+    filter: brightness(1.03);
 }
 .filter-button:focus{ outline:2px solid rgba(0,0,0,0.08); }
 
