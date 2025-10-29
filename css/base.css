@@ -1,0 +1,84 @@
+/* Main site stylesheet use classes so we can toggle active state */
+:root{
+    --accent: #e47a2a;
+    --accent-dark: #c66317;
+    --text: #3a2f26;
+    --button-text: #ffffff;
+    --button-active-bg: #f3d9b9;
+    --button-active-text: #3a2f26;
+}
+
+/* Row layout shared by both filter rows */
+.filters-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin:16px 0;
+}
+.filter-button{
+    border: none;
+    background: var(--accent);
+    color: var(--button-text);
+    padding:8px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.08);
+}
+.filter-button.active{
+    background: var(--button-active-bg);
+    color: var(--button-active-text);
+}
+.filter-button:focus{ outline:2px solid rgba(0,0,0,0.08); }
+
+/* Spacing for the chart area */
+.responsive-svg-container{
+    width:100%;
+    max-width:1000px;
+    margin-bottom:16px;
+}
+
+/* Data source note */
+.body{ 
+    margin-top:10px; 
+    color:#3f2f28; 
+}
+
+.body a{ 
+    color:var(--accent-dark); 
+    font-weight:600; 
+}
+
+/* Footer */
+footer{
+    background: #5a3e2b; /* dark brown */
+    color: #ffffff;
+    padding:14px 24px;
+    margin-top:24px;
+}
+
+footer p{ 
+    margin:0; text-align:center; 
+    font-size:14px; 
+}
+
+/* Small utility */
+.lead{ 
+    font-size:16px; 
+    color:#4a362e; 
+}
+
+@media screen and (max-width:596px){
+    header h1{ 
+        font-size:20px; 
+    }
+    
+    main{ 
+        padding:18px 14px; 
+    }
+
+    .filter-button{ padding:8px 10px; }
+}
+
+/* Test rule to verify styles are live */
+.filter-button{ background:#e47a2a !important; color:#fff !important; }
