@@ -15,9 +15,13 @@ d3.csv("data/Ex6_TVdata.csv", d => ({
     console.log("Loaded data:", data);
 
     // Call functions after data is loaded
-    // These functions should be implemented in your other JS files (histogram.js, interactions.js, etc.)
     if (typeof drawHistogram === "function") drawHistogram(data);
     if (typeof populateFilters === "function") populateFilters(data);
+    if (typeof drawScatterplot === "function") drawScatterplot(data);
+
+    // Build tooltip and wire mouse events (Step 3)
+    if (typeof createTooltip === "function") createTooltip();
+    if (typeof handleMouseEvents === "function") handleMouseEvents();
 })
 .catch(error => {
     console.error("Error loading the CSV file:", error);
